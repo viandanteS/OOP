@@ -1,0 +1,22 @@
+package poo.agendina_new;
+
+import java.util.Iterator;
+import java.util.Map;
+import java.util.TreeMap;
+
+public class AgendinaMap extends AgendinaAstratta{
+	private Map<Nominativo,Nominativo> tabella=new TreeMap<>();
+	public int size() { return tabella.size(); }
+	public Iterator<Nominativo> iterator(){
+		return tabella.values().iterator();
+	}
+	public void aggiungi( Nominativo n ) {
+		tabella.put(n, n);
+	}//aggiungi
+	public Nominativo cerca( Nominativo n ) {
+		return tabella.get(n);
+	}//cerca
+	public void rimuovi( Nominativo n ) {
+		tabella.remove(n);
+	}//rimuovi
+}//AgendinaMap
